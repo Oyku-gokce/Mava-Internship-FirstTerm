@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <script src="mava.js"></script>
+</head>
+<body>
+  
+    <header id="header">
+        <div class="header">
+            <div class="container">
+                <div class="header-navbar">
+                    <div class="header-logo" onclick="goToHomePage()">
+                        <img src="https://www.mava.com.tr/tema/genel/uploads/logo/footer/mava_logo.png" alt="">
+                    </div>
+                    <div class="header-menu">
+                        <div class="dropdown" onmouseover="showDropdown('kurumsal')" onmouseout="hideDropdown('kurumsal')">
+                            <span class="dropdown-toggle">Kurumsal<span class="plus-sign">+</span></span></span>
+                            <span class="triangle"></span>
+                            
+                            <ul class="dropdown-menu" id="dropdown-menu-kurumsal" onmouseover="showDropdown('kurumsal')" onmouseout="hideDropdownContent('kurumsal')">
+                              <li><a href="#" onclick="selectMenuItem(event, 'kurumsal', 1)">Hakkımızda</a></li>
+                              <li><a href="#" onclick="selectMenuItem(event, 'kurumsal', 2)">Belgelerimiz</a></li>
+                              <li><a href="#" onclick="selectMenuItem(event, 'kurumsal', 3)">Referanslarımız</a></li>
+                              <li><a href="#" onclick="selectMenuItem(event, 'kurumsal', 4)">Ekibimiz</a></li>
+                              <li><a href="#" onclick="selectMenuItem(event, 'kurumsal', 5)">İnsan Kaynakları</a></li>
+                              <li><a href="#" onclick="selectMenuItem(event, 'kurumsal', 6)">S.S.S.</a></li>
+                              <li><a href="#" onclick="selectMenuItem(event, 'kurumsal', 7)">Müşteri Görüşleri</a></li>
+                              <li><a href="#" onclick="selectMenuItem(event, 'kurumsal', 8)">Banka Hesapları</a></li>
+                            </ul>
+                          </div>
+                          
+                          
+                          <div class="dropdown" onmouseover="showDropdown('urunler')" onmouseout="hideDropdown('urunler')">
+                            <span class="dropdown-toggle">Ürünler<span class="plus-sign">+</span></span>
+                            <span class="triangle"></span>
+                            <ul class="dropdown-menu" id="dropdown-menu-urunler" onmouseover="showDropdown('urunler')" onmouseout="hideDropdownContent('urunler')">
+                                <li><a href="#" onclick="selectMenuItem(event, 'urunler', 1)">Otel Yönetim Sistemleri</a></li>
+                                <li><a href="#" onclick="selectMenuItem(event, 'urunler', 2)">ERP Çözümleri</a></li>
+                                <li><a href="#" onclick="selectMenuItem(event, 'urunler', 3)">Otel Online Satınalma Yönetim Sistemleri </a></li>
+                                <li><a href="#" onclick="selectMenuItem(event, 'urunler', 4)">Restaurant Bar Beach Pos Çözümleri</a></li>
+                                <li><a href="#" onclick="selectMenuItem(event, 'urunler', 5)">Satış Pazarlama Yönetim Sistemleri</a></li>
+                                <li><a href="#" onclick="selectMenuItem(event, 'urunler', 6)">Kalite Yönetim Sistemi</a></li>
+                                <li><a href="#" onclick="selectMenuItem(event, 'urunler', 7)">Tümünü Göster</a></li>                              
+                            </ul>
+                          </div>
+                          <div class="dropdown">
+                            <span class="dropdown-toggle">Hizmetler<span class="plus-sign">+</span></span>
+                            <span class="triangle"></span>
+                          </div>
+                          <div class="dropdown">
+                            <span class="dropdown-toggle">Blog<span class="plus-sign">+</span></span>
+                            <span class="triangle"></span>
+                          </div>
+                          <div class="dropdown">
+                            <span class="dropdown-toggle">İletişim<span class="plus-sign">+</span></span>
+                            <span class="triangle"></span>
+                          </div>              
+                    </div>
+                    <div class="communication">
+                        <div class="content">
+                          <div class="search"><img src="https://cdn-icons-png.flaticon.com/128/3686/3686896.png" alt="">
+                          </div>
+                          
+                          <div class="telephone">
+                            <p>Bizi 7/24 arayın<br><span>0(850)888 0048</span></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="menu-icon" onclick="openModal()">
+                        <img src="https://cdn-icons-png.flaticon.com/128/2976/2976215.png" alt="Menu">
+                      </div>
+                      
+                      <!-- Açılır Panel (Modal) -->
+                      <div class="modal" id="modal">
+                        <div class="modal-content">
+                          <span class="close" onclick="closeModal()">&times;</span>
+                          <img  onclick="goToHomePage()" src="https://www.mava.com.tr/tema/genel/uploads/logo/footer/mava_logo.png" alt="">
+                          <div class="search-form">
+                            <input type="text" class="search-input" placeholder="Kelime Yaz.!">
+                            <button type="submit" class="search-button"> <i class="fas fa-search search-icon"></i></button>
+                          </div>
+                          <P>TEST</P><br>
+                          <div id="map"></div> <!-- Haritanın gösterileceği div öğesi -->
+                         <br><br> <p>İletişim Bilgileri</p>
+                         <div class="borderr"></div>
+                         <div class="info">
+                          <img src="https://cdn-icons-png.flaticon.com/128/535/535239.png" alt="">
+                          <p>Muğla Teknopark  Kat:2  D:39  B220 Muğla Turkey</p>
+                         </div>
+                         <div class="info">
+                          <img src="https://cdn-icons-png.flaticon.com/128/159/159832.png" alt="">
+                          <p>0 (850) 888 0048</p>
+                         </div>
+                         <div class="info">
+                          <img src="https://cdn-icons-png.flaticon.com/128/72/72490.png" alt="">
+                          <p>0 (850) 888 0048</p>
+                         </div>
+                         <div class="info">
+                          <img src="https://cdn-icons-png.flaticon.com/128/481/481659.png" alt="">
+                          <p>info@mava.com.tr</p>
+                         </div>
+                        </div>
+                        
+                        </div>
+                        </div>
+                        
+                        <script>
+                          function initMap() {
+                            // Harita konumunu oluşturmak için bir LatLng nesnesi kullanın.
+                            var myLatLng = { lat: 37.179293, lng: 28.373158 }; 
+                        
+                            // Harita oluşturma
+                            var map = new google.maps.Map(document.getElementById("map"), {
+                              center: myLatLng, // Haritanın ortalandığı konum
+                              zoom: 12 // Yakınlaştırma düzeyi (1 ile 20 arasında değer verebilirsiniz)
+                            });
+                        
+                            // Konum işaretçisi eklemek için bir Marker nesnesi kullanın.
+                            var marker = new google.maps.Marker({
+                              position: myLatLng,
+                              map: map,
+                              title: "Muğla Teknopark" // İşaretçi üzerine gelince gösterilecek başlık
+                            });
+                          }
+                        </script>
+                        
+                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4u1rvFZtn6w81s1iRUOlAVMcJ-4Ar09c&callback=initMap" async defer></script>
+                      </div>
+                      
+                      
+
+                </div>
+
+            </div>
+        </div>
+    </header>
+    
+    <section>
+      <div class="wave-container">
+      <div class="slayt"><img src="https://media.istockphoto.com/id/660883784/tr/foto%C4%9Fraf/i%C5%9F-adamlar%C4%B1-siluetleri.webp?b=1&s=170667a&w=0&k=20&c=hDT7ZUQU69RiR0dQYJWBA3UVU3r4ydO-3Op1xPsEW8Y=" />
+        <div class="wave"></div> <div class="slide-text">
+        <h2>Sizin için çalışıyoruz</h2>
+        <p>Yenilikçi yaklaşımlar yeni nesil yazılım çözümleri ile sizlerleyiz</p><br>
+        <button id="buttons">Detaylar</button>
+      </div></div>
+     
+      <div class="slayt"><img src="https://images.unsplash.com/photo-1683755300481-a1d7f62ce644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDk0fGFldTZyTC1qNmV3fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60" />
+        <div class="wave"></div> <div class="slide-text">
+        <h2>Tüm ürünlerimiz bulut(cloud)<br> tabanlı çalışan yönetim <br>sistemleri</h2>
+        <p>Kurumsal firmaların Tek Program ile Tüm süreçleri yönettiği yazılım çözümü</p><br>
+        <button class="details" id="buttons">Detaylar</button>
+      </div></div>
+      <div class="slayt"><img src="https://media.istockphoto.com/id/915160652/tr/foto%C4%9Fraf/adam%C4%B1m-serbest-meslek-sahibi-ev-ofis-diz%C3%BCst%C3%BC-bilgisayar-kullanan-%C3%A7al%C4%B1%C5%9F%C4%B1yor-serbest-ya%C5%9Fam.webp?b=1&s=170667a&w=0&k=20&c=mOq0A95hv9gnHlCa_MkDcOxBuqgywmHpRN9gtxf0uKs=" /><div class="wave"></div><div class="slide-text">
+        <h2>Online satınalma yönetim sistemi</h2>
+        <p>Tek tuşla teklif ve sipariş</p><br>
+        <button class="slide-button" id="buttons">Detaylar</button>
+      </div></div>
+      </div>
+      <div id="kontrol">
+        <a class="dot" href="javascript:showSlayt(0)"></a>
+        <a class="dot" href="javascript:showSlayt(1)"></a>
+        <a class="dot" href="javascript:showSlayt(2)"></a>
+      </div>
+    </div>
+  </section>
+  <div class="social-icons">
+    <a href="https://www.telefon-sitesi.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/724/724664.png" alt="Telefon"></a>
+    <a href="https://www.whatsapp-sitesi.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/3670/3670051.png" alt="WhatsApp"></a>
+    <a href="https://www.instagram-sitesi.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/3955/3955024.png" alt="Instagram"></a>
+  </div>
+  
+
+<script>
+  "use strict";
+  var _slayt = document.getElementsByClassName("slayt");
+  var slayt_count = _slayt.length;
+  var slaytNo = 0;
+  var i = 0;
+  var autoSlideInterval; 
+
+  showSlayt(slaytNo);
+  startAutoSlide();
+
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(function () {
+      slaytNo++;
+      showSlayt(slaytNo);
+    }, 5000); 
+  }
+
+  function nextSlayt() {
+    slaytNo++;
+    showSlayt(slaytNo);
+    clearInterval(autoSlideInterval); 
+  }
+
+  function preSlayt() {
+    slaytNo--;
+    showSlayt(slaytNo);
+    clearInterval(autoSlideInterval); 
+  }
+
+  function showSlayt(slaytNum) {
+    slaytNo = slaytNum;
+
+    if (slaytNum >= slayt_count) slaytNo = 0;
+
+    if (slaytNum < 0) slaytNo = slayt_count - 1;
+
+    for (i = 0; i < slayt_count; i++) {
+      _slayt[i].style.display = "none";
+    }
+
+    _slayt[slaytNo].style.display = "block";
+  }
+
+  
+  function initSlider() {
+    var dots = document.getElementsByClassName("dot");
+    for (var j = 0; j < dots.length; j++) {
+      dots[j].addEventListener("click", function () {
+        var index = parseInt(this.getAttribute("href").split(":")[1]);
+        showSlayt(index);
+      });
+    }
+  }
+
+  initSlider();
+</script>
+
+  
+
+  <section class="second">
+    <h2 class="title">Ürün Grupları</h2>
+    <div class="alt-kisim">
+      <div class="alt-resim" onclick="goToPage('otel_yonetim_sistemi.html')">
+        <img src="https://images.unsplash.com/photo-1682336869523-2c6859f781cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE1fGFldTZyTC1qNmV3fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60" alt="Resim 1">
+        <div class="alt-yazi">Otel Yönetim Sistemi</div>
+      </div>
+      <div class="alt-resim" onclick="goToPage('diger_sayfa.html')">
+        <img src="https://images.unsplash.com/photo-1682336869523-2c6859f781cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE1fGFldTZyTC1qNmV3fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60" alt="Resim 2">
+        <div class="alt-yazi">ERP Çözümleri</div>
+      </div>
+      <div class="alt-resim" onclick="goToPage('baska_sayfa.html')">
+        <img src="https://images.unsplash.com/photo-1682336869523-2c6859f781cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE1fGFldTZyTC1qNmV3fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60" alt="Resim 3">
+        <div class="alt-yazi">Otel Online Satınalma Yöntemleri</div>
+      </div>
+    </div>
+    <div class="alt-kisim">
+      <div class="alt-resim" onclick="goToPage('otel_yonetim_sistemi.html')">
+        <img src="https://images.unsplash.com/photo-1682336869523-2c6859f781cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE1fGFldTZyTC1qNmV3fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60" alt="Resim 1">
+        <div class="alt-yazi">Restaurant Bar Beach Pos Çözümleri</div>
+      </div>
+      <div class="alt-resim" onclick="goToPage('diger_sayfa.html')">
+        <img src="https://images.unsplash.com/photo-1682336869523-2c6859f781cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE1fGFldTZyTC1qNmV3fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60" alt="Resim 2">
+        <div class="alt-yazi">Satış Pazarlama Yönetim Sistemleri</div>
+      </div>
+      <div class="alt-resim" onclick="goToPage('baska_sayfa.html')">
+        <img src="https://images.unsplash.com/photo-1682336869523-2c6859f781cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE1fGFldTZyTC1qNmV3fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60" alt="Resim 3">
+        <div class="alt-yazi">Kalite Yönetim Sistemi</div>
+      </div>
+    </div>
+  </section>
+  <section class="third">
+    <div class="about">
+      <div class="moving-arrow">
+        <img src="https://cdn-icons-png.flaticon.com/128/9497/9497031.png" alt="Sarı Ok">
+      </div>
+      <img src="https://images.unsplash.com/photo-1689525970033-948720b0ccf8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDZ8YWV1NnJMLWo2ZXd8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+      <div class="article">
+        <h2>Hakkımızda</h2>
+        <p>Yazılım sektöründe uzmanlaşmış genç ve dinamik bir kadro ile 2020 Muğla Teknopark'ta kurulan MAVA , sektör ihtiyaçlarına yönelik yazılım ve mobil uygulama geliştirerek, en doğru çözümü en kısa sürede vermeyi hedeflemektedir. Teknolojik gelişmeleri de yakından takip ederek son Teknoloji yazılım sistemleri ile  kaliteli hizmet sunmayı amaç edinmiştir. ERP (Enterprise Resource Planning),Turizm ve Konaklama sektörlerine  yönelik olarak üretilen 32 modülü ile departmanların bir birleri ile full entegre şeklinde çalışan sistem sayesinde tek program ile bütün süreçlerini kolay ve hızlı pratik bir şekilde yönetmektedir. Muğla Teknopark Ar-Ge ...</p>
+        <br><button id="buttons">Devamını oku</button>
+      </div>
+      
+    </div>
+   
+  </section>
+  
+  <div class="border"></div>
+   <section class="fourth">
+    <div class="work">
+      <div class="product">
+        <img src="https://cdn-icons-png.flaticon.com/128/1119/1119693.png" alt="">
+      </div>
+      <div class="number"><p>38+</p></div>
+      <div class="name"><p>Ürün Grubu</p></div>
+
+    </div>
+    <div class="work">
+      <div class="product">
+        <img src="https://cdn-icons-png.flaticon.com/128/1119/1119693.png" alt="">
+      </div>
+      <div class="number"><p>38+</p></div>
+      <div class="name"><p>Ürün Grubu</p></div>
+      
+    </div>
+    <div class="work">
+      <div class="product">
+        <img src="https://cdn-icons-png.flaticon.com/128/1119/1119693.png" alt="">
+      </div>
+      <div class="number"><p>38+</p></div>
+      <div class="name"><p>Ürün Grubu</p></div>
+      
+    </div>
+   </section>
+   <div class="border"></div>
+   <section class="fifth">
+    <h2>Sizin Görüşleriniz</h2>
+   
+    <div class="container">
+      <div class="text-box">
+        <img class="leaf" src="https://t3.ftcdn.net/jpg/02/97/79/96/240_F_297799634_elHYKPFh99cq1Zz0iP52aVMbxTkgR87v.jpg" alt="">
+        <p>Club Aida Otel olarak Tek Programla rezervasyondan , kartlı yüklemeli satış sisteminden , maliyet, genel muhasebe, e-defter
+          çözümlerine kadar tüm süreçlerimizi MAVA ile yönetiyoruz. Mava Firmasına Teşekkür ederiz.
+          <br><br><br>
+          Fatos Sezen<br>
+          Muhasebe Müdürü<br></p>
+        <p>Mali Müşavirliği yaptığımız E-Defter olan şirketlerimizin Mava Muhasebe Yönetim sistemi E-Defter çözümlerini kullanıyoruz. Günlerçe
+          kadar fatua işleme devrini bitiren tek yazılım olarak. Mava ürünün kullandığımız için çok mutluyuz . Teşekkür Ederiz MAVA Ailesine
+          <br><br><br>Gamze Bayındır<br>
+          S.M.M.M Mali Müşavir<br></p>
+        <p>Grand Yazıcı Hotels Satın Alma departmanı olarak Mava Yazılım ile çalışmaktan çok memnunuz. Taleplerimizin hepsine hem hizli hemde
+          pratik çözümleriyle yardımcı oluyorlar. Kendilerine departmanımız adına çok teşekkür ederiz.
+          <br><br><br>Ahmet Yazıcı<br>
+          Satın Alma<br<</p>
+          <p>Orka Lotus Beach otel olarak satınalma operasyonlarımı Mava Satınalma yönetim sistemini ile yönetiyoruzHızli pratik tek tuşla teklif ve
+            sipariş alma özelliği ile sizleri hem zamandan tasarruf ettiriyor hemde fiyat analizlerini daha doğru pratik şekilde yapmış oluyoruz.
+            Teşekkür Ederiz MAVA ailesine.
+            <br><br><br>Asil AKTAŞ<br>
+            Satınalma Müdürü<br></p>
+        
+      </div>
+      <div class="arrows">
+        <img id="up-arrow" src="https://cdn-icons-png.flaticon.com/128/626/626075.png" alt="Up Arrow">
+        <img id="down-arrow" src="https://cdn-icons-png.flaticon.com/128/608/608258.png" alt="Down Arrow">
+      </div>
+      
+<script>
+ 
+  const textBox = document.querySelector('.text-box');
+  const lines = textBox.getElementsByTagName('p');
+  let currentLineIndex = 0;
+
+  
+  document.getElementById('up-arrow').addEventListener('click', function() {
+    lines[currentLineIndex].style.display = 'none'; 
+
+    // En üstteysek en alttaki satıra geçiş
+    if (currentLineIndex === 0) {
+      currentLineIndex = lines.length - 1;
+    } else {
+      currentLineIndex--; // Bir üst satıra geçiş 
+    }
+
+    lines[currentLineIndex].style.display = 'block'; // Yeni satırı göster
+  });
+
+  // Aşağı oka tıklandığında
+  document.getElementById('down-arrow').addEventListener('click', function() {
+    lines[currentLineIndex].style.display = 'none'; // Mevcut satırı gizle
+
+    // En alttaysak en üstteki satıra geçiş yap
+    if (currentLineIndex === lines.length - 1) {
+      currentLineIndex = 0;
+    } else {
+      currentLineIndex++; // Bir alt satıra geçiş 
+    }
+
+    lines[currentLineIndex].style.display = 'block'; // Yeni satırı göster
+  });
+</script>
+
+      
+    </div>
+    <img class="coma"src="https://t3.ftcdn.net/jpg/03/97/45/06/240_F_397450699_QRnCEmLRtrqHQHIKG64UGwDGpQ2xQFxg.jpg">
+   </section>
+   <section class="sixth">
+    <div class="coffee">
+      <img src="https://images.unsplash.com/photo-1483401757487-2ced3fa77952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Ymx1ZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Resim">
+      <div class="coffee-button">Bizimle iletişime geçin</div>
+      <div class="coffee-text"><h2>Kahveye Bekliyoruz</h2><p>Projelerimiz hakkında daha detaylı bilgi sahibi olmanız adına, sizi ofisimizde misafir etmekten mutluluk duyarız.</p></div>
+    </div>
+    <h2 class="title">Blog</h2>
+   </section>
+   <section class="seventh">
+    <div class="blog">
+      <img src="https://images.unsplash.com/photo-1483401757487-2ced3fa77952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Ymx1ZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Resim">
+    
+    <div class="blog-text">
+      <div class="blog-text1">
+        <p>Bir sorunuz mu var? Bizi 7/24 arayın<br><a href="http://">0(850)888 0048</a></p><br><p><h2>İletişim Bilgileri</h2>Muğla Teknopark Kat:2 D:39 B220 Muğla Turkey</p>
+      </div>
+      <div class="blog-text2">
+        <h2> Hızlı Menü</h2>
+        <ul>
+          <li><a href="sayfa1.html">Hakkımızda</a></li>
+          <li><a href="sayfa2.html">Ürünlerimiz</a></li>
+          <li><a href="sayfa3.html">Hizmetlerimiz</a></li>
+          <li><a href="sayfa2.html">Blog</a></li>
+          <li><a href="sayfa2.html">Müşteri Görüşleri</a></li>
+          <li><a href="sayfa2.html">İnsan Kaynakları</a></li>
+          <li><a href="sayfa2.html">Banka Hesapları</a></li>
+          <li><a href="sayfa2.html">İletişim</a></li>
+          
+        </ul>
+      </div>
+      <div class="blog-text3"><p>Bizimle Çalışmak İstermisiniz ? İşimize geniş bir bakış açısıyla yaklaşıp hayal ederiz, farklı çözüm yolları ve yeni fikirlerle yaklaşımda bulunuruz. Sizler için de ne yapabileceğimizi bilmek isteriz, bizimle iletişime geçip tanışmaya ne dersiniz?</p></div>
+    </div>
+      </div>
+   </section>
+   <footer style="background-color: #f4f4f4; text-align: center; padding: 10px;">
+    <p>&copy; 2023 İsim Soyisim. Tüm hakları saklıdır.</p>
+  </footer>
+</body>
+</html>
